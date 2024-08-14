@@ -1,0 +1,4 @@
+(executable
+ (public_name graph)
+ (name main)
+ (libraries graph cohttp-async lwt cohttp-lwt-unix lwt_ppx rdf))

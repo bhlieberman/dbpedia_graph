@@ -1,0 +1,3 @@
+(library
+ (name graph)
+ (libraries cohttp cohttp-lwt-unix rdf rdf_json_ld))
