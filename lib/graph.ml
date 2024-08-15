@@ -24,11 +24,7 @@ let rec http_get_and_follow ~max_redirects uri =
   let open Lwt.Syntax in
   let* ans =
     Client.get
-      ?headers:
-        (Some
-           Header.(
-             of_list
-               [ ("Accept", "text/turtle"); ("Content-Type", "text/turtle") ]))
+      ?headers:(Some Header.(of_list [ ("Accept", "text/turtle") ]))
       uri
   in
   follow_redirect ~max_redirects uri ans
@@ -90,3 +86,5 @@ let urls =
   |> List.map (fun s ->
          String.length s - 2 |> String.(sub s 1) |> Uri.of_string)
   |> Lwt_list.map_s (fun s -> retrieve_link s)
+
+module Web_server = Web_server

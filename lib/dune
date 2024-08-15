@@ -1,3 +1,9 @@
 (library
  (name graph)
- (libraries cohttp cohttp-lwt-unix rdf rdf_json_ld))
+ (libraries cohttp cohttp-lwt-unix dream rdf rdf_json_ld yojson ppx_yojson_conv)
+ (preprocess (pps lwt_ppx ppx_yojson_conv)))
+
+(rule
+ (targets forms.ml)
+ (deps forms.eml.html)
+ (action (run dream_eml %{deps} --workspace %{workspace_root})))

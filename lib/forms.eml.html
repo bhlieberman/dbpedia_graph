@@ -1,0 +1,23 @@
+let show_form ?message request =
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwiki -- A Wikipedia data explorer!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  </head>
+  <body>
+%   begin match message with
+%   | None -> ()
+%   | Some message ->
+      <p>You entered: <b><%s message %>!</b></p>
+%   end;
+
+    <form method="POST" action="/search">
+      <%s! Dream.csrf_tag request %>
+        <input name="message" autofocus>
+    </form>
+  </body>
+  </html>
+
