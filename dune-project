@@ -1,15 +1,17 @@
 (lang dune 3.16)
 
+(using melange 0.1)
+
 (name graph)
 
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github bhlieberman/dbpedia_graph))
 
-(authors "Author Name")
+(authors "Ben Lieberman")
 
-(maintainers "Maintainer Name")
+(maintainers "Ben Lieberman")
 
 (license LICENSE)
 

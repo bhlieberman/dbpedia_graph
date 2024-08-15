@@ -1,0 +1,5 @@
+(melange.emit
+ (target app)
+ (libraries hello reason-react)
+ (preprocess
+  (pps reason-react-ppx)))
