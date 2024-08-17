@@ -1,6 +1,5 @@
 (library
  (name hello)
- (modes melange)
- (libraries reason-react)
+ (libraries bonsai bonsai.web virtual_dom js_of_ocaml-lwt)
  (preprocess
-  (pps reason-react-ppx melange.ppx)))
+  (pps js_of_ocaml-ppx bonsai.ppx_bonsai)))

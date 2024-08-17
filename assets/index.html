@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cyberpunk">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qwiki -- A Wikipedia Data Explorer!</title>
-    <link rel="stylesheet" href="static/output.css">
 </head>
 
 <body>
-    <h1>Welcome to Qwiki</h1>
-    <form method="POST" action="/search" enctype="application/x-www-form-urlencoded">
-        <label for="search">Search for a Wiki resource here:</label>
-        <input type="text" name="search">
-        <button type="submit">Search</button>
-    </form>
     <div id="root"></div>
-    <script src="static/bundle.js"></script>
+    <script src="static/qwiki.bc.js"></script>
 </body>
-
 </html>

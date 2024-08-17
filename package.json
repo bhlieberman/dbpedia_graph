@@ -10,20 +10,29 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --mode production --entry ./_build/default/app/app.js",
-    "serve": "webpack serve --open --mode development --entry ./_build/default/app/app.js"
+    "bundle": "webpack --mode production --entry ./_build/default/qwiki.bc.js",
+    "watch_css": "tailwindcss -i ./assets/input.css -o ./assets/output.css --watch",
+    "serve": "webpack serve --open --mode development --entry ./_build/default/qwiki.bc.js",
+    "shadow": "shadow-cljs watch app",
+    "watch": "concurrently \"npm run watch_css\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.2",
     "daisyui": "^4.12.10",
     "tailwindcss": "^3.4.10",
     "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@adiatma/re-antd": "^0.1.5",
+    "antd": "^4.24.16",
     "react": "^18.3.1",
+    "react-daisyui": "^5.0.3",
     "react-dom": "^18.3.1"
   }
 }

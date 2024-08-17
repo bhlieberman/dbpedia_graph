@@ -1,5 +1,10 @@
-(melange.emit
- (target app)
- (libraries hello reason-react)
+(executable
+ (name qwiki)
+ (libraries hello js_of_ocaml-lwt bonsai)
+ (modes js)
  (preprocess
-  (pps reason-react-ppx)))
+  (pps js_of_ocaml-ppx bonsai.ppx_bonsai)))
+
+(alias
+ (name default)
+ (deps qwiki.bc.js assets/index.html))

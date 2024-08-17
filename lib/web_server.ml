@@ -11,6 +11,6 @@ let server =
         match%lwt Dream.form req with
         | `Ok ["message", message] -> Dream.html (Forms.show_form ~message req)
         | _ -> Dream.empty `Bad_Request);
-      Dream.get "/static/**" (Dream.static "assets/");
+      Dream.get "/static/**" (Dream.static "_build/default");
       Routes.dbpedia_page
      ]
